@@ -41,6 +41,6 @@ public:
     int findKthLargest(vector<int>& nums, int k) {
         //return usingSort(nums,k);//TC->O(NlogN) SC->O(1)
         //return usingMaxHeap(nums,k);//TC->O(N log N) SC->O(N)
-        return usingMinHeap(nums,k);
+        return usingMinHeap(nums,k);//TC->O(N log K) SC->O(K)
     }
 };
