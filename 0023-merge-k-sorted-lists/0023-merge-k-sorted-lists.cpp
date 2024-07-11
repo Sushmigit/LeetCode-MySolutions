@@ -43,7 +43,7 @@ public:
         }
         return res->next;
     }
-    ListNode* mergeKLists(vector<ListNode*>& lists) {
+    ListNode* mergeKLists(vector<ListNode*>& lists) {//TC->O(n log k) SC->O(1)
         int i;
         if(lists.size()==0)
             return NULL;
