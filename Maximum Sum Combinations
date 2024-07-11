@@ -36,3 +36,52 @@ Output 1:
 Output 1:
 
  [10, 9, 9, 8]
+
+
+Solution:
+vector<int> brute(vector<int> &a,vector<int> &b,int k)
+{
+    int n = a.size();
+    int i,j;
+    vector<int>res(k),ans(n*n);
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            ans.push_back(a[i]+b[j]);
+        }
+    }
+    sort(ans.begin(),ans.end(),greater<int>());
+    for(i=0;i<k;i++)
+    res[i]=ans[i];
+    
+    return res;
+}
+vector<int> optimal(vector<int> &a,vector<int> &b,int k)
+{
+    sort(a.begin(),a.end());
+    sort(b.begin(),b.end());
+    priority_queue<pair<int,int>>pq;
+    int n = a.size();
+    for(int i=0;i<n;i++)
+    pq.push({a[i]+b[n-1],n-1});
+    
+    vector<int>ans;
+    while(!pq.empty() && k--)
+    {
+        auto it = pq.top();
+        int sum = it.first;
+        int ind = it.second;
+        pq.pop();
+        ans.push_back(sum);
+        if(ind-1>=0)
+        pq.push({sum-b[ind]+b[ind-1],ind-1});
+        
+    }
+    return ans;
+}
+vector<int> Solution::solve(vector<int> &A, vector<int> &B, int C) {
+    //return brute(A,B,C);//TC->O(N^2 log N) SC->O(2N)
+    return optimal(A,B,C);//Tc->O(max(NlogN,K log N)) SC->O(N)
+}
+
