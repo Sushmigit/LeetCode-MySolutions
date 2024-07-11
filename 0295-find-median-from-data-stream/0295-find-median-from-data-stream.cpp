@@ -1,5 +1,6 @@
 class MedianFinder {
 public:
+    //TC->O(NlogN) SC->O(N)
     priority_queue<int>maxheap;
     priority_queue<int,vector<int>,greater<int>>minheap;
     MedianFinder() {
