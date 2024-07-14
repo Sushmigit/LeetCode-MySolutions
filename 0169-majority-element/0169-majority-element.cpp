@@ -1,7 +1,8 @@
 class Solution {
 public:
-    int majorityElement(vector<int>& nums) {
-       int i,n=nums.size(),j,cnt=0,ans;
+    int naiveApproach(vector<int>& nums)
+    {
+         int i,n=nums.size(),j,cnt=0,ans;
         for(i=0;i<n;i++)
         {
             cnt = 0;
@@ -17,5 +18,29 @@ public:
             }
         }
         return ans;
+    }
+    int usingHash(vector<int>& nums)
+    {
+        map<int,int>mpp;
+        int i,n = nums.size();
+        int ans = 0;
+        for(i=0;i<n;i++)
+        {
+            mpp[nums[i]]++;
+        }
+        for(i=0;i<n;i++)
+        {
+            if(mpp[nums[i]]>n/2)
+            {
+                ans = nums[i];
+                break;
+            }
+        }
+        return ans;
+    }
+    int majorityElement(vector<int>& nums) {
+      
+        //return naiveApproach(nums);//TC->O(N*N) SC->O(1)
+        return usingHash(nums);
     }
 };
