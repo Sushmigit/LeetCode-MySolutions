@@ -1,6 +1,7 @@
 class Solution {
 public:
     double myPow(double x, long n) {
+        //TC->O(log n) SC->O(1) 
        double ans = 1.0;
         
         long nn = n;
