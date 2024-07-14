@@ -38,9 +38,27 @@ public:
         }
         return ans;
     }
+    int mooreVotingAlgo(vector<int>& nums)
+    {
+        int ele = -1,cnt=0,i,n=nums.size();
+        for(i=0;i<n;i++)
+        {
+            if(cnt == 0)
+            {
+                cnt = 1;
+                ele = nums[i];
+            }
+            else if(ele == nums[i])
+                cnt++;
+            else
+                cnt--;
+        }
+        return ele;
+    }
     int majorityElement(vector<int>& nums) {
       
         //return naiveApproach(nums);//TC->O(N*N) SC->O(1)
-        return usingHash(nums);
+        //return usingHash(nums);//TC->O(N) SC->O(N)
+        return mooreVotingAlgo(nums);
     }
 };
