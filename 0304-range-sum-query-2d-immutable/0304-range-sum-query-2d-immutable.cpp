@@ -1,5 +1,6 @@
 class NumMatrix {
 public:
+    //TC->O(N*M) SC->O(N+M)
     vector<vector<int>>mat;
     NumMatrix(vector<vector<int>>& matrix) {
        int n =matrix.size();
