@@ -13,7 +13,7 @@ public:
                 if(nums[i]==nums[j])
                     cnt++;
             }
-            if(cnt>n/3 )
+            if(cnt>n/3)
             {
                 if(!ans.empty())
                 {
@@ -29,7 +29,22 @@ public:
         }
         return ans;
     }
+    vector<int> usingHash(vector<int>& nums)
+    {
+        map<int,int>mpp;
+        vector<int>ans;
+        int i,n=nums.size();
+        for(i=0;i<n;i++)
+            mpp[nums[i]]++;
+       for(auto it=mpp.begin();it!=mpp.end();it++)
+       {
+          if(it->second > n/3)
+              ans.push_back(it->first);
+       }
+        return ans;
+    }
     vector<int> majorityElement(vector<int>& nums) {
-       return naiveApproach(nums);
+       //return naiveApproach(nums);//TC->O(N*N) SC->O(N)
+        return usingHash(nums);
     }
 };
