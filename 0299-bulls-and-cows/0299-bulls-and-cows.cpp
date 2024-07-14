@@ -1,6 +1,7 @@
 class Solution {
 public:
     string getHint(string secret, string guess) {
+        //TC->O(N) SC->O(1)
         int bulls = 0,cows = 0;
         int i;
         vector<int>hash(10,0);
