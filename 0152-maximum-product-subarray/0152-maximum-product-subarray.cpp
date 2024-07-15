@@ -3,13 +3,14 @@ public:
     int naive(vector<int>& nums)
     {
         int i,j,n=nums.size();
-        int maxi = INT_MIN;
+        long long maxi = INT_MIN;
         for(i=0;i<n;i++)
         {
-            int pro = 1;
+            long long pro = 1;
             for(j=i;j<n;j++)
             {
                 pro*=nums[j];
+                if(pro<INT_MIN) pro=1;
                 maxi=max(maxi,pro);
             }
         }
@@ -33,7 +34,7 @@ public:
         return maxi;
     }
     int maxProduct(vector<int>& nums) {
-        //return naive(nums);//TC->O(N*N) SC->O(1)
+       //return naive(nums);//TC->O(N*N) SC->O(1) TLE
         return preSuf(nums);//TC->O(N) SC->O(1)
     }
 };
