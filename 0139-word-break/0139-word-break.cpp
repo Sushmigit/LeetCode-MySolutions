@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //TC->O(n) SC->O(n)+O(n)
     bool helper(int start,string s,vector<string>& wordDict,vector<int>& memo)
     {
         if(start == s.size())
