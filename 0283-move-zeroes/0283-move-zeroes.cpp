@@ -11,17 +11,7 @@ public:
         }
             
         int ind = 0;
-       /* for(int i=0;i<n1;i++)
-        {
-            if(nums[i] == 0)
-            {
-                for(int j=i;j<n1;j++)
-                {
-                    nums[j] = nums[j+1];
-                }
-               
-            }
-        }*/
+      
         for(int i = 0;i<n;i++)
         {
            if(nums[i]!=0)
