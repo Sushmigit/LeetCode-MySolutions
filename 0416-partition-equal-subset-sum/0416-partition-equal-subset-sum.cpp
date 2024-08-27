@@ -5,6 +5,7 @@ public:
         int sum = 0;
         for(int i=0;i<n;i++)
             sum+=arr[i];
+        //if the sum is odd we can't partition it
         if(sum % 2 == 1)
             return false;
         int k = sum/2;
@@ -13,6 +14,8 @@ public:
     if(arr[0] <= k)
     prev[arr[0]] = true;
     int tar;
+        //Subset sum equal to k here target = sum/2 
+        //if we can find subseq with sum k then it is possible to partition the  arr
     for(int ind = 1;ind < n;ind++)
     {
         for(tar = 1;tar <= k;tar++)
