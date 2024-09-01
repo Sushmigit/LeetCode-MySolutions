@@ -2,6 +2,7 @@ class Solution {
 public:
     int findMaxConsecutiveOnes(vector<int>& nums) {
         int i,maxi=0;int c=0;int n=nums.size();
+        //TC->O(N) SC->O(!)
       for(int i=0;i<n;i++)
       {
           if(nums[i] == 1) c++;
