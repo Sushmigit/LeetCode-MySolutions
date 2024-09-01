@@ -59,6 +59,6 @@ public:
       
         //return naiveApproach(nums);//TC->O(N*N) SC->O(1)
         //return usingHash(nums);//TC->O(N) SC->O(N)
-        return mooreVotingAlgo(nums);
+        return mooreVotingAlgo(nums);//TC->O(N) SC->O(1)
     }
 };
