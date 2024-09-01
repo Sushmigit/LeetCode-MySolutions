@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //TC->O(n) SC->O(n)
     vector<int> twoSum(vector<int>& nums, int target) {
         vector<int>arr;
         unordered_map<int,int>mpp;int i;
